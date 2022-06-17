@@ -1,12 +1,10 @@
-function Orders() {
-  this.pizzas = {};
-}
+// function Orders() {
+//   this.pizzas = {};
+// }
 
-Orders.prototype.addPizza = function(pizza) {
-  this.pizzas[Pizza] = pizza;
-}
-
-toppings = [];
+// Orders.prototype.addPizza = function(pizza) {
+//   this.pizzas[Pizza] = pizza;
+// }
 
 function Pizza (toppings, size) {
   this.toppings = toppings;
@@ -29,7 +27,7 @@ Pizza.prototype.Cost = function (cost) {
 // orders.addPizza(myPizza);
 // orders.pizzas;
 
-let orders = new Orders();
+let pizza1 = new Pizza();
 
 // function displayPizzaOrders(ordersToDisplay) {
 //   let pizzaOrders = $("ul#orders");
@@ -49,7 +47,7 @@ $(document).ready(function() {
     const inputtedOnions = $("input#onions").val();
     const inputtedSize = $("select#pizza-size").val();
     let newPizza = new Pizza(inputtedExtraCheese, inputtedPepperoni, inputtedOnions, inputtedSize)
-    orders.addPizza(newPizza);
-    displayPizzaOrders(orders);
+    $("#order-summary").html("<p>" + inputtedExtraCheese + " " + inputtedPepperoni + " " + inputtedOnions + " " + inputtedSize + "</p>");
+    return;
   });
 });
