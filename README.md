@@ -61,3 +61,11 @@ Orders.prototype.addPizza = function(pizza) {
 Test: "It should return a pizza object after new pizza is created"
 Code: orders.pizzas;
 Expected Output: myPizza()
+
+describe: Orders.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
+Test: "It should assign and increment an id for each Pizza object passed into Orders"
+code: Orders.pizzas;
+Expected Output: "return myPizza with an id of 1"

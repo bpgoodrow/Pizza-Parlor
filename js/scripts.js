@@ -1,10 +1,17 @@
-// function Orders() {
-//   this.pizzas = {};
-// }
+function Orders() {
+  this.pizzas = {};
+  this.currentId = 0;
+}
 
-// Orders.prototype.addPizza = function(pizza) {
-//   this.pizzas[Pizza] = pizza;
-// }
+Orders.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas[Pizza] = pizza;
+}
+
+Orders.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
 
 function Pizza(toppings, size) {
   this.toppings = toppings;
@@ -21,23 +28,23 @@ Pizza.prototype.Cost = function (cost) {
   return cost;
 }
 
-// let orders = new Orders();
-// let myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
-// myPizza.Cost();
-// orders.addPizza(myPizza);
-// orders.pizzas;
+let orders = new Orders();
+let myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
+myPizza.Cost();
+orders.addPizza(myPizza);
+orders.pizzas;
 
-// let pizza1 = new Pizza();
+let pizza1 = new Pizza();
 
-// function displayPizzaOrders(ordersToDisplay) {
-//   let pizzaOrders = $("ul#orders");
-//   let htmlForPizzaInfo = "";
-//   Object.keys(ordersToDisplay.contacts).forEach(function(key) {
-//     const pizza = ordersToDisplay.findPizza(key);
-//     htmlForPizzaInfo += "<li>" + this.Pizza + "</li>";
-//   });
-//   pizzaOrders.html(htmlForPizzaInfo);
-// }
+function displayPizzaOrders(ordersToDisplay) {
+  let pizzaOrders = $("ul#orders");
+  let htmlForPizzaInfo = "";
+  Object.keys(ordersToDisplay.contacts).forEach(function(key) {
+    const pizza = ordersToDisplay.findPizza(key);
+    htmlForPizzaInfo += "<li>" + this.Pizza + "</li>";
+  });
+  pizzaOrders.html(htmlForPizzaInfo);
+}
 
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
@@ -46,7 +53,9 @@ $(document).ready(function() {
     const inputtedPepperoni = $("#pepperoni").val();
     const inputtedOnions = $("#onions").val();
     const inputtedSize = $("#pizza-size").val();
-    let newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
-    $("#order-summary").html("<p>" + newPizza + "</p>");
+    // let newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
+    // $("#order-summary").html("<p>" + newPizza + "</p>");
+    let newPizza = new Pizza(inputtedExtraCheese, inputtedPepperoni, inputtedOnions, inputtedSize);
+    
   });
 });
