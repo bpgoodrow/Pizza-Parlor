@@ -46,8 +46,7 @@ $(document).ready(function() {
     const inputtedPepperoni = $("#pepperoni").val();
     const inputtedOnions = $("#onions").val();
     const inputtedSize = $("#pizza-size").val();
-    const newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
+    let newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
     $("#order-summary").html("<p>" + newPizza + "</p>");
-    return;
   });
 });
