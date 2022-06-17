@@ -1,3 +1,11 @@
+function Orders() {
+  this.pizzas = {};
+}
+
+Orders.prototype.addPizza = function(pizza) {
+  this.pizzas[Pizza] = pizza;
+}
+
 toppings = [];
 
 function Pizza (toppings, size) {
@@ -15,4 +23,8 @@ Pizza.prototype.Cost = function (cost) {
   return cost;
 }
 
-myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
+let orders = new Orders();
+let myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
+myPizza.Cost();
+orders.addPizza(myPizza);
+orders.pizzas;

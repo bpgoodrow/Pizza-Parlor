@@ -44,11 +44,20 @@ Test: "It should return a Pizza object with two properties for toppings and size
 Code: const myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions",] "Large");
 Expected Output: Pizza { toppings: ["Extra Cheese", "Pepperoni", "Onions"] size: "Large" }
 
-Describe: myPizza.Cost ()
+Describe: myPizza.Cost()
 Test: "It should return a Pizza object with a string of "$10.00"
 Expected Output: { toppings: ["Extra Cheese", "Pepperoni", "Onions"] , size: "Large" , "$10.00"}
 
-Describe: myPizza.Cost ()
+Describe: myPizza.Cost()
 Test: "It should return the cost based on the size of pizza inputted this.size"
 Code: myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
 Expected Output: myPizza.Cost(); 'Extra Cheese,Pepperoni,Onions, Large, $20.00'
+
+Describe: Orders()
+Orders.prototype.addPizza = function(pizza) {
+  this.pizzas[Pizza] = pizza;
+}
+
+Test: "It should return a pizza object after new pizza is created"
+Code: orders.pizzas;
+Expected Output: myPizza()
