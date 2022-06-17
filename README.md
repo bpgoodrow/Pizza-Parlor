@@ -23,7 +23,7 @@ This is a html/css/javascript web application that takes a users topping options
 * Additionally open [ in your web browser.
 
 ## Known Bugs
-* N/A
+* jquery not printing orders to html
 
 ## License
 MIT
