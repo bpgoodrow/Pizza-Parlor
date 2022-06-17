@@ -6,7 +6,7 @@
 //   this.pizzas[Pizza] = pizza;
 // }
 
-function Pizza (toppings, size) {
+function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
 }
@@ -27,7 +27,7 @@ Pizza.prototype.Cost = function (cost) {
 // orders.addPizza(myPizza);
 // orders.pizzas;
 
-let pizza1 = new Pizza();
+// let pizza1 = new Pizza();
 
 // function displayPizzaOrders(ordersToDisplay) {
 //   let pizzaOrders = $("ul#orders");
@@ -42,12 +42,12 @@ let pizza1 = new Pizza();
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
-    const inputtedExtraCheese = $("input#extra-cheese").val();
-    const inputtedPepperoni = $("input#pepperoni").val();
-    const inputtedOnions = $("input#onions").val();
-    const inputtedSize = $("select#pizza-size").val();
-    let newPizza = new Pizza(inputtedExtraCheese, inputtedPepperoni, inputtedOnions, inputtedSize)
-    $("#order-summary").html("<p>" + inputtedExtraCheese + " " + inputtedPepperoni + " " + inputtedOnions + " " + inputtedSize + "</p>");
+    const inputtedExtraCheese = $("#extra-cheese").val();
+    const inputtedPepperoni = $("#pepperoni").val();
+    const inputtedOnions = $("#onions").val();
+    const inputtedSize = $("#pizza-size").val();
+    const newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
+    $("#order-summary").html("<p>" + newPizza + "</p>");
     return;
   });
 });
