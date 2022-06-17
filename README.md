@@ -69,3 +69,13 @@ describe: Orders.prototype.assignId = function() {
 Test: "It should assign and increment an id for each Pizza object passed into Orders"
 code: Orders.pizzas;
 Expected Output: "return myPizza with an id of 1"
+
+describe: Orders.prototype.findPizza = function(id) {
+  if (this.contacts[id] != undefined) {
+    return this.contacts[id];
+  }
+  return false;
+};
+Test: "It should allow the Orders object to retrieve any pizza object that has been created"
+code: pizza1;
+expected output: mypizza {... , id:1}

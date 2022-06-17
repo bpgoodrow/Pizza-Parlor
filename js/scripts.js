@@ -13,6 +13,13 @@ Orders.prototype.assignId = function() {
   return this.currentId;
 };
 
+Orders.prototype.findPizza = function(id) {
+  if (this.contacts[id] != undefined) {
+    return this.contacts[id];
+  }
+  return false;
+};
+
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -32,7 +39,6 @@ let orders = new Orders();
 let myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions"], "Large");
 myPizza.Cost();
 orders.addPizza(myPizza);
-orders.pizzas;
 
 let pizza1 = new Pizza();
 
