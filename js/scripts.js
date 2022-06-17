@@ -31,6 +31,16 @@ Pizza.prototype.Cost = function (cost) {
 
 let orders = new Orders();
 
+// function displayPizzaOrders(ordersToDisplay) {
+//   let pizzaOrders = $("ul#orders");
+//   let htmlForPizzaInfo = "";
+//   Object.keys(ordersToDisplay.contacts).forEach(function(key) {
+//     const pizza = ordersToDisplay.findPizza(key);
+//     htmlForPizzaInfo += "<li>" + this.Pizza + "</li>";
+//   });
+//   pizzaOrders.html(htmlForPizzaInfo);
+// }
+
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
@@ -40,6 +50,6 @@ $(document).ready(function() {
     const inputtedSize = $("select#pizza-size").val();
     let newPizza = new Pizza(inputtedExtraCheese, inputtedPepperoni, inputtedOnions, inputtedSize)
     orders.addPizza(newPizza);
-    console.log(orders.addPizza)
+    displayPizzaOrders(orders);
   });
 });
