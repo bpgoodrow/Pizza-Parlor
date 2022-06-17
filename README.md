@@ -38,8 +38,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Tests
 
-Describe:
+Describe: Pizza()
 
-Test:
-Code:
-Expected Output:
+Test: "It should return a Pizza object with two properties for toppings and size"
+Code: const myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions",] "Large");
+Expected Output: Pizza { toppings: ["Extra Cheese", "Pepperoni", "Onions"] size: "Large" }
