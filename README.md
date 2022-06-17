@@ -43,3 +43,14 @@ Describe: Pizza()
 Test: "It should return a Pizza object with two properties for toppings and size"
 Code: const myPizza = new Pizza(["Extra Cheese", "Pepperoni", "Onions",] "Large");
 Expected Output: Pizza { toppings: ["Extra Cheese", "Pepperoni", "Onions"] size: "Large" }
+
+Describe: Pizza.prototype.Cost = function (cost) {
+  if (this.size === "Small") {
+    return this.toppings + ", " + this.size + ", " + "$10.00";
+  };
+  return cost;
+}
+
+Test: "It should return a Pizza object with a string of "$10.00"
+Expected Output: { toppings: ["Extra Cheese", "Pepperoni", "Onions"] , size: "Large" , "$10.00"}
+
