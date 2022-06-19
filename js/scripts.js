@@ -56,21 +56,28 @@ let orders = new Orders();
 function displayPizzaOrders(ordersToDisplay) {
   let pizzaOrders = $("#order-summary");
   let htmlForPizzaInfo = "";
-  // console.log(Object.keys(ordersToDisplay))
   Object.keys(ordersToDisplay.pizzas).forEach(function(key) {
     const pizza = ordersToDisplay.findPizza(key);
     htmlForPizzaInfo += "<p" + pizza.id + ">" + pizza + "</p>";
   });
   pizzaOrders.html(htmlForPizzaInfo);
-  // console.log(orders)
 }
 
 $(document).ready(function() {
   $("form#new-order").submit(function(event) {
     event.preventDefault();
-    const inputtedExtraCheese = $("#extra-cheese").val();
-    const inputtedPepperoni = $("#pepperoni").val();
-    const inputtedOnions = $("#onions").val();
+    let inputtedExtraCheese = "";
+    let inputtedPepperoni = "";
+    let inputtedOnions = "";
+    if ($("#extra-cheese").is(":checked")) {
+      inputtedExtraCheese = $("#extra-cheese").attr('name');
+    }
+    if ($("#pepperoni").is(":checked")) {
+      inputtedPepperoni = $("#pepperoni").attr('name');
+    }
+    if ($("#onions").is(":checked")) {
+      inputtedOnions = $("#onions").attr('name');
+    }
     const inputtedSize = $("#pizza-size").val();
     const toppings = inputtedExtraCheese + ", " + inputtedPepperoni + ", " + inputtedOnions;
     let newPizza = new Pizza(toppings, inputtedSize);
