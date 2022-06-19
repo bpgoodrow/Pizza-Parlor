@@ -1,5 +1,5 @@
 function Orders() {
-  this.pizzas = {};
+  this.pizzas = {}; // List of Pizza objects
   this.currentId = 0;
 }
 
@@ -19,6 +19,17 @@ Orders.prototype.findPizza = function(id) {
   }
   return false;
 };
+
+Orders.prototype.toString = function() {
+  return "pizza" + this.currentId;
+}
+
+// @param toppings - comma separated list of toppings
+// @param size - size of pizze (small,medium, large)
+
+Pizza.prototype.toString = function () {
+  return "toppings: " + this.toppings + ", " + "size: " + this.size;
+}
 
 function Pizza(toppings, size) {
   this.toppings = toppings;
@@ -45,11 +56,13 @@ let orders = new Orders();
 function displayPizzaOrders(ordersToDisplay) {
   let pizzaOrders = $("#order-summary");
   let htmlForPizzaInfo = "";
+  // console.log(Object.keys(ordersToDisplay))
   Object.keys(ordersToDisplay.pizzas).forEach(function(key) {
     const pizza = ordersToDisplay.findPizza(key);
-    htmlForPizzaInfo += "<p" + pizza.id + ">" + this.Pizza + "</p>";
+    htmlForPizzaInfo += "<p" + pizza.id + ">" + pizza + "</p>";
   });
   pizzaOrders.html(htmlForPizzaInfo);
+  // console.log(orders)
 }
 
 $(document).ready(function() {
@@ -59,9 +72,10 @@ $(document).ready(function() {
     const inputtedPepperoni = $("#pepperoni").val();
     const inputtedOnions = $("#onions").val();
     const inputtedSize = $("#pizza-size").val();
-    let newPizza = new Pizza(inputtedExtraCheese, inputtedPepperoni, inputtedOnions, inputtedSize);
+    const toppings = inputtedExtraCheese + ", " + inputtedPepperoni + ", " + inputtedOnions;
+    let newPizza = new Pizza(toppings, inputtedSize);
     orders.addPizza(newPizza);
-    displayPizzaOrders(Orders);
+    displayPizzaOrders(orders);
     // let newPizza = new Pizza($("#extra-cheese", "#pepperoni", "#onions", "#pizza-size").val());
     // $("#order-summary").html("<p>" + newPizza + "</p>");
     
