@@ -25,7 +25,7 @@ Orders.prototype.toString = function() {
 }
 
 Pizza.prototype.toString = function () {
-  return "<strong>toppings</strong>: " + this.toppings + " " + "<strong>size</strong>: " + this.size;
+  return "<strong>My Pizza: Toppings</strong>: " + this.toppings + " " + "<strong>Size</strong>: " + this.size;
 }
 
 function Pizza(toppings, size) {
@@ -35,11 +35,11 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.Cost = function () {
   if (this.size === "Small") {
-    return " $10.00";
+    return " <strong>Cost</strong> $10.00";
   } else if (this.size === "Medium") {
-    return " $15.00";
+    return " <strong>Cost</strong> $15.00";
   } else if (this.size === "Large") {
-    return " $20.00"};
+    return " <strong>Cost</strong> $20.00"};
   return "No size selected";
 }
 

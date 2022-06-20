@@ -23,7 +23,7 @@ This is a html/css/javascript web application that takes a users topping options
 * Additionally open [ in your web browser.
 
 ## Known Bugs
-* jquery not printing orders to html
+* Will return pizza with no selected toppings if none of the options are selected.
 
 ## License
 MIT
