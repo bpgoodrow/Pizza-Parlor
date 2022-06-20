@@ -2,9 +2,20 @@ body {
   display: block;
   margin: auto;
   width: 80%;
-  border: 2px solid black;
-  border-right: 2px solid black;
   padding-left: 20px;
+  background-color: #fdfd96 ;
+}
+
+.header-container {
+  background-color: lightsalmon;
+  padding-top: 2px;
+  padding-bottom: 18px;
+  text-align: center;
+}
+
+.parent-container {
+  background-color: lightblue;
+  border: 2px solid black;
 }
 
 button {
