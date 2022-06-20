@@ -36,14 +36,14 @@ function Pizza(toppings, size) {
   this.size = size;
 }
 
-Pizza.prototype.Cost = function (cost) {
+Pizza.prototype.Cost = function () {
   if (this.size === "Small") {
-    return this.toppings + ", " + this.size + ", " + "$10.00";
+    return "$10.00";
   } else if (this.size === "Medium") {
-    return this.toppings + ", " + this.size + ", " + "$15.00";
+    return "$15.00";
   } else if (this.size === "Large") {
-    return this.toppings + ", " + this.size + ", " + "$20.00"};
-  return cost;
+    return "$20.00"};
+  return "No size selected";
 }
 
 // let orders = new Orders();
@@ -58,7 +58,7 @@ function displayPizzaOrders(ordersToDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(ordersToDisplay.pizzas).forEach(function(key) {
     const pizza = ordersToDisplay.findPizza(key);
-    htmlForPizzaInfo += "<p" + pizza.id + ">" + pizza + "</p>";
+    htmlForPizzaInfo += "<p" + pizza.id + ">" + pizza + pizza.Cost() + "</p>";
   });
   pizzaOrders.html(htmlForPizzaInfo);
 }
