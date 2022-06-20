@@ -4,7 +4,7 @@ By Ben Goodrow
 This is a html/css/javascript web application that takes a users topping options along with size option and returns the input through an object in javascript to print the order with total cost on the html page.
 
 ## Link to GitHubPages
-
+[bpgoodrow.github.io/Pizza/Parlor](https://bpgoodrow.github.io/Pizza-Parlor)
 
 ## Technololgies Used
 * HTML
@@ -20,7 +20,7 @@ This is a html/css/javascript web application that takes a users topping options
 * Clone this repository to your desktop.
 * Navigate to the top level of the portfolio-landing-page-directory.
 * Open index.html in your browser.
-* Additionally open [ in your web browser.
+* Additionally open [bpgoodrow.github.io/Pizza/Parlor](https://bpgoodrow.github.io/Pizza-Parlor) in your web browser.
 
 ## Known Bugs
 * Will return pizza with no selected toppings if none of the options are selected.
